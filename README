@@ -1,2 +1,4 @@
-This is an anagram solver written in C, pretty fast compared to my previous versions in java and C#.
+This is an anagram solver written in C.
+So far my fastest solution of anagram solver for Helmes Coding Challenge.
+~20x speedup from java, and ~4x quicker than C# version.
 Special characters like õ,ä,ö,ü need terminal's character encoding to be set to windows-1257.
