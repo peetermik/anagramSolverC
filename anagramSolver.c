@@ -30,6 +30,7 @@ int main(int argc, char **argv)
 
     char *output = malloc(maxOutputLength);
     int originalWordLength = strlen(originalWord);
+    int originalWordVector = wordVector(originalWord);
 
     // Let's read the entire anagram list file to a buffer, binary access for speed.
     char *fileBuffer = 0;
@@ -61,7 +62,7 @@ int main(int argc, char **argv)
             {
                 currentLine[charPosCount] = '\0';                          // Mark current line as finished.
                 if (charPosCount == originalWordLength && checkActive &&   // If lenghts of the original and current word are equal, and checking is active,
-                    wordVector(currentLine) == wordVector(originalWord) && // and vector lenghts of those words are also equal,
+                    wordVector(currentLine) == originalWordVector && // and vector lenghts of those words are also equal,
                     strcmp(currentLine, originalWord))                     // and the words aren't the same, then we might have an anagram.
                 {
                     // TODO: Extra check to be sure that we really have an anagram.
